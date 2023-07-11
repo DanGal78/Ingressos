@@ -14,7 +14,7 @@ class EventosController extends Controller
      */
     public function index()
     {
-        $evento = Evento::all();
+        $eventos = Evento::all();
         return response()->json($eventos, Response::HTTP_OK);
     }
 

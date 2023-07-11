@@ -15,7 +15,8 @@ class Evento extends Model
         "descricao",
         "local",
         "data_evento",
-        "user_id"
+        "user_id",
+        "slug"
     ];
 
     protected $casts = [
@@ -26,11 +27,5 @@ class Evento extends Model
         "created_at",
         "updated_at"
     ];
-    protected $appends = [
-        "nome_slug"
-    ];
-
-    public function getNomeSlugAttribute(){
-        return Str::slug($this->nome);
-    }
+    
 }
