@@ -15,6 +15,7 @@ class EventosController extends Controller
     public function index()
     {
         $eventos = Evento::all();
+        $eventos->load("ingressos");
         return response()->json($eventos, Response::HTTP_OK);
     }
 
@@ -37,6 +38,7 @@ class EventosController extends Controller
         if(!$evento){
             return response()->json(["message" => "Nao encontrado"], Response::HTTP_NOT_FOUND);
         }
+        $eventos->load("ingressos");
         return response()->json($evento, Response::HTTP_OK);
     }
 

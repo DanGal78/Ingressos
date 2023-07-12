@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventosController;
+use App\Http\Controllers\IngressoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,16 @@ Route::prefix("/eventos")->group(function(){
     Route::get("/",[EventosController::class,"index"]);
     Route::get("/{id}",[EventosController::class,"show"]);
     Route::put("/{id}",[EventosController::class,"update"]);
-    Route::delete("/{id}",[EventosController::class,"destroy"]);
+    Route::delete("/{id}",[EventosController::class,"destroy"]);    
     
 });
+
+Route::prefix("/ingressos")->group (function() {
+    Route::get("/",[IngressoController::class,"index"]);
+    Route::get("/{id}",[IngressoController::class,"show"]);
+    Route::post("/",[IngressoController::class,"store"]);
+    Route::put("/{id}",[IngressoController::class,"update"]);
+    Route::delete("/{id}",[IngressoController::class,"destroy"]);
+});
+
 
