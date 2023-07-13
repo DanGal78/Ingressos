@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventosController;
 use App\Http\Controllers\IngressoController;
+use App\Http\Controllers\AutenticacaoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,4 +38,6 @@ Route::prefix("/ingressos")->group (function() {
     Route::delete("/{id}",[IngressoController::class,"destroy"]);
 });
 
-
+Route::prefix("/credenciais")->group (function() {
+    Route::post("/registrar",[AutenticacaoController::class,"registrar"]);
+});

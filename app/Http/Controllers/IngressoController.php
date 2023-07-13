@@ -16,7 +16,7 @@ class IngressoController extends Controller
     public function index()
     {
         $ingressos = Ingresso::all();
-        $ingressos = load("evento");
+        $ingressos ->load("evento");
 
         return response()->json($ingressos, Response::HTTP_OK);
     }

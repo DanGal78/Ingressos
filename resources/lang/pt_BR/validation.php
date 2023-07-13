@@ -10,5 +10,16 @@ return [
     "decimal" => "O campo :attribute precisa ter entre :mim e :max casas decimais",
     "required_without" => "O campo :attribute precisa ser informado quando :values nao estiver presente",
     "required_without_all" => "O campo :attribute precisa ser informado quando :values estiver presente",
+    "email" => "O campo :attribute precisa ser um email válido",
+    "confirmed" => "O campo :attribute de confirmacao no confere",
+    "min" => [
+        "numeric" => "O campo :attribute precisa ser no minimo :min",
+        "string" => "O campo :attribute precisa ter no minimo :min caracteres",
+    ],
+
+    "max" => [
+        "numeric" => "O campo :attribute precisa ser no maximo :max",
+        "string" => "O campo :attribute precisa ter no maximo :max caracteres",
+    ],
 
 ];

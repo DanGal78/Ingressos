@@ -19,11 +19,8 @@ class Ingresso extends Model
     ];
 
 
-    protected $appends = [
-        "evento"
+   
 
-    ];
-    
     public function evento(){
         return $this->belongsTo(Evento::class);
     }
