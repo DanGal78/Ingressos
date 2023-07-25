@@ -12,7 +12,7 @@ class AutenticacaoController extends Controller
 {
     public function __construct()
     {
-        $this->middleware("auth:api", ["except" => ["login", "registar"]]);
+        $this->middleware("auth:api", ["except" => ["login", "registrar"]]);
     }
 
 
@@ -23,12 +23,12 @@ class AutenticacaoController extends Controller
 
         $usuario = User::create($request->all());
 
-        return response()->json(["massage" =>"Usuário cadastrado com sucesso"], Response::HTTP_CREATED);
+        return response()->json(["message" =>"Usuário cadastrado com sucesso"], Response::HTTP_CREATED);
     }
     public function login(LoginRequest $request){
         $token = auth()->attempt($request->only(["email", "password"]));
         if(!$token){
-            return response()->json(["massage" => "Usuário ou senha invalido"], Response::HTTP_UNAUTHORIZED);
+            return response()->json(["message" => "Usuário ou senha invalido"], Response::HTTP_UNAUTHORIZED);
 
     }
     return $this->respostaToken($token);
